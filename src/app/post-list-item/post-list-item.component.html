@@ -1,0 +1,15 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': postLove > postDontLove,
+'list-group-item-danger': postLove < postDontLove}">
+    <div class="clearfix">
+        <h2 class="float-left">{{ postTitle }}</h2>
+        <p class="light float-right">Posté le: {{ postDate | date:'short' }}</p>
+    </div>
+    <p class="text-justify">{{ postContent }}</p>
+    <p>
+        <span class="red"><i class="fas fa-heart"></i> {{ postLove }}</span>&nbsp;
+        <span class="blue"><i class="fas fa-heart-broken"></i> {{ postDontLove }}</span>
+    </p>
+    <button class="btn btn-success">Love it</button>
+    <button class="btn btn-danger">Don't love it</button>
+</li>
